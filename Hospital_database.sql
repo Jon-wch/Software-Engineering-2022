@@ -29,9 +29,9 @@ CREATE TABLE VisitorToPlaces
 (
 QRcode STRING,
 device_ID STRING,
-entry_date DATE,
+entry_date DATE NOTNULL,
 entry_time STRING(100),
-exit_date DATE,
+exit_date DATE NOTNULL,
 exit_time STRING(100),
 PRIMARY KEY(QRcode, device_ID, entry_date, entry_time), 
 FOREIGN KEY(device_ID) REFERENCES Visitor(device_ID) ON DELETE CASCADE ON UPDATE CASCADE,
