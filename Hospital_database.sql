@@ -8,27 +8,27 @@ DROP TABLE IF EXISTS Hospital;
 CREATE TABLE Visitor
 (
 citizen_id INTEGER,
-address STRING(100),
-phone_number STRING(20),
-email STRING(100),
-device_ID STRING(20),
-infected BOOLEAN,
+address CHAR(100),
+phone_number VARCHAR(20),
+email VARCHAR(100),
+device_ID VARCHAR(20),
+infected TINYINT CHECK (infected BETWEEN 0 AND 1),
 PRIMARY KEY(citizen_id)
 );
 
 CREATE TABLE Places
 (
-place_id INTEGER,
-address STRING(100),
-place_name STRING(20),
-QRcode STRING(100),
+place_id VARCHAR,
+address CHAR(100),
+place_name VARCHAR(20),
+QRcode VARCHAR(100),
 PRIMARY KEY(place_id),
 );
 
 CREATE TABLE VisitorToPlaces
 (
-QRcode STRING,
-device_ID STRING,
+QRcode VARCHAR,
+device_ID VARCHAR,
 entry_date DATE NOT NULL,
 entry_time TIME(100),
 exit_date DATE NOT NULL,
@@ -43,15 +43,15 @@ FOREIGN KEY(QRcode) REFERENCES Places(QRcode) ON DELETE CASCADE ON UPDATE CASCAD
 CREATE TABLE Agent
 (
 agent_id INTEGER,
-username STRING(100),
-password STRING(20),
+username VARCHAR(100),
+password VARCHAR(20),
 PRIMARY KEY(agent_id)
 );
 
 CREATE TABLE Hospital
 (
 hospital_id INTEGER,
-username STRING(100),
-password STRING(20),
+username VARCHAR(100),
+password VARCHAR(20),
 PRIMARY KEY(hospital_id)
 );
