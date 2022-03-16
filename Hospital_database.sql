@@ -1,3 +1,4 @@
+--Wong Chun Hei
 DROP TABLE IF EXISTS Visitor;
 DROP TABLE IF EXISTS Places;
 Drop TABLE if EXISTS VisitorToPlaces;
